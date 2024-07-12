@@ -4,20 +4,26 @@ const path = require('path');
 const { app, BrowserWindow } = require('electron');
 
 function main() {
-  // create new window
-  let mainWindow = new BrowserWindow({
-  
-    webPreferences: {
-      nodeIntegration: true
-    },
-    width: 520,
-    height: 650,
-    frame: false
-    
-  })
+  // Ensure that the screen module is required after the app is ready
+  const { screen } = require('electron');
 
-  // load app/index.html as the window content
-  //  mainWindow.webContents.openDevTools();
+  // Get the primary display dimensions
+  let primaryDisplay = screen.getPrimaryDisplay();
+  let { width, height } = primaryDisplay.workAreaSize;
+
+  // Create new window
+  let mainWindow = new BrowserWindow({
+    webPreferences: {
+      nodeIntegration: true,
+    },
+    width: width,
+    height: height,
+    frame: false,
+    fullscreen: true,
+  });
+
+  // Load app/index.html as the window content
+  // mainWindow.webContents.openDevTools();
   mainWindow.loadFile(path.join('app', 'index.html'));
 }
 

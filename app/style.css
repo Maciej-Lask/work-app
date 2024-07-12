@@ -6,6 +6,8 @@ body {
   font-family: 'Open Sans', sans-serif;
   padding: 30px;
   text-align: center;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  margin: 0; /* Ensure no margin is added by default */
 }
 
 h1 {
@@ -15,6 +17,7 @@ h1 {
 p {
   color: #999;
   font-size: 0.8rem;
+  margin: 0 20px; /* Add margin to ensure text doesn't cause overflow */
 }
 
 .btn {
@@ -36,16 +39,16 @@ p {
 }
 
 .btn-close {
-  background: rgb(161, 0, 0);
+  background: rgb(241, 22, 22);
   color: #fff;
   font-weight: bold;
-  border-radius:  50%;
-  border: none;
+  border-radius:  15%;
+  border: 2px solid #cc5c5c;
   font-size: 20px;
   position: absolute;
   top: 20px;
   right: 20px;
-  padding: 6px 14px;
+  padding: 8px 14px;
   opacity: 0.8;
   margin: 0;
 }
@@ -74,4 +77,3 @@ p {
     transform: scale3d(1, 1, 1);
   }
 }
-
