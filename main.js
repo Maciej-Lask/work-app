@@ -19,11 +19,11 @@ function main() {
     width: width,
     height: height,
     frame: false,
-    fullscreen: true,
+    fullscreen: false,
   });
 
   // Load app/index.html as the window content
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
   mainWindow.loadFile(path.join('app', 'index.html'));
 }
 
